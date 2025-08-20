@@ -17,19 +17,29 @@ const Hero = () => {
         <div className="absolute inset-0 hero-gradient opacity-90"></div>
       </div>
 
-      {/* Additional Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-secondary-light rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+      </div>
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="particle-1 absolute w-2 h-2 bg-white rounded-full opacity-60 animate-bounce" style={{top: '20%', left: '10%', animationDelay: '0s', animationDuration: '3s'}}></div>
+        <div className="particle-2 absolute w-3 h-3 bg-secondary-light rounded-full opacity-40 animate-bounce" style={{top: '60%', left: '80%', animationDelay: '1s', animationDuration: '4s'}}></div>
+        <div className="particle-3 absolute w-1 h-1 bg-white rounded-full opacity-80 animate-bounce" style={{top: '30%', right: '20%', animationDelay: '2s', animationDuration: '5s'}}></div>
+        <div className="particle-4 absolute w-2 h-2 bg-secondary rounded-full opacity-50 animate-bounce" style={{top: '80%', left: '30%', animationDelay: '1.5s', animationDuration: '3.5s'}}></div>
+        <div className="particle-5 absolute w-1 h-1 bg-white rounded-full opacity-70 animate-bounce" style={{top: '15%', right: '30%', animationDelay: '0.5s', animationDuration: '4.5s'}}></div>
       </div>
 
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="fade-in animate">
           <h1 className="heading-xl mb-6 text-white">
-            Hi, I'm <span className="text-secondary-light">Akshatha Sakragowda</span>
+            Hi, I'm <span className="text-secondary-light">Akshatha T</span>
           </h1>
           <p className="text-xl md:text-2xl mb-4 font-light text-white">
-            Passionate AI/ML Student & Software Developer
+            AI/ML Enthusiast | Problem Solver | Future Engineer
           </p>
           <p className="text-lg md:text-xl mb-8 text-white/80 max-w-2xl mx-auto">
             Building innovative solutions that merge technology with real-world impact.

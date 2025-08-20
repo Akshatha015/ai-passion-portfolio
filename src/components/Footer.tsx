@@ -43,7 +43,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand Section */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">Akshatha Sakragowda</h3>
+            <h3 className="text-2xl font-bold text-primary mb-6">Akshatha T</h3>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
               Passionate AI/ML student building innovative solutions that merge 
               technology with real-world impact. Always eager to learn and grow.
@@ -106,7 +106,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-primary-foreground/80 text-sm mb-4 md:mb-0">
-              © {currentYear} Akshatha Sakragowda. All rights reserved.
+              © {currentYear} Akshatha T. All rights reserved.
             </p>
             <div className="flex items-center text-primary-foreground/80 text-sm">
               <span>Made with</span>

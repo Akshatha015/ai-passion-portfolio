@@ -11,16 +11,45 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to a server
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'eef43d70-2892-47e9-9d35-78302c73e51d',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for your message. I'll get back to you soon!",
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -69,14 +98,14 @@ const Contact = () => {
   return (
     <section id="contact" className="section-padding bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 fade-in">
-          <h2 className="heading-lg text-primary mb-4">Let's Connect</h2>
-          <div className="w-20 h-1 bg-gradient-secondary mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, collaborations, 
-            or just having a conversation about technology and innovation.
-          </p>
-        </div>
+          <div className="text-center mb-16 fade-in">
+            <h2 className="heading-lg text-primary mb-4">Let's Connect</h2>
+            <div className="w-20 h-1 bg-gradient-secondary mx-auto mb-8"></div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              I'm always open to discussing new opportunities, collaborations, 
+              or just having a conversation about technology and innovation.
+            </p>
+          </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
@@ -185,9 +214,13 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full btn-hero">
+                <Button 
+                  type="submit" 
+                  className="w-full btn-hero"
+                  disabled={isSubmitting}
+                >
                   <Send className="mr-2 h-5 w-5" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </div>
             </form>
