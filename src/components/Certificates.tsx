@@ -12,27 +12,30 @@ const Certificates = () => {
       featured: true
     },
     {
-      title: 'Python Programming Certification',
-      organization: 'Professional Development',
+      title: 'AI Agent using Agentforce',
+      organization: 'GeeksforGeeks & Salesforce',
       date: '2024',
-      description: 'Comprehensive certification covering Python fundamentals, advanced concepts, and real-world applications.',
-      category: 'Programming',
+      description: 'Advanced certification in building AI agents using Salesforce Agentforce platform and related technologies.',
+      link: 'https://drive.google.com/file/d/1APEwL3iv23Edym88MxbLGB7HVv5ALJqU/view?usp=sharing',
+      category: 'AI/ML',
+      featured: true
+    },
+    {
+      title: 'Digital 101',
+      organization: 'Digital Literacy Program',
+      date: '2024',
+      description: 'Foundational certification covering essential digital skills and modern technology concepts.',
+      link: 'https://drive.google.com/file/d/1APlODddlU2pCI7U0WLkAaLLspUTtInp3/view?usp=sharing',
+      category: 'Digital Skills',
       featured: false
     },
     {
-      title: 'HTML & CSS Certification',
-      organization: 'Web Development',
-      date: '2023',
-      description: 'Front-end web development certification focusing on modern HTML5 and CSS3 techniques.',
-      category: 'Web Development',
-      featured: false
-    },
-    {
-      title: 'Subject-Specific Certification',
-      organization: 'Academic Excellence',
-      date: '2023',
-      description: 'Specialized certification in core computer science and AI/ML subjects.',
-      category: 'Academic',
+      title: 'Getting Started with Enterprise Data Science',
+      organization: 'IBM',
+      date: '2024',
+      description: 'Professional certification in enterprise-level data science methodologies and IBM tools.',
+      link: 'https://drive.google.com/file/d/1ox06MI9VAZ8HLiEHUlGE1iqNdaXnrrds/view?usp=drive_link',
+      category: 'Data Science',
       featured: false
     }
   ];
